@@ -58,6 +58,9 @@ $config = [
         'store' => [
             'class' => 'app\modules\store\Module'
         ],
+        'user' => [
+            'class' => 'app\modules\user\Module'
+        ],
     ],
 ];
 

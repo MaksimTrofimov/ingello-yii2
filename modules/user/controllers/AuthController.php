@@ -12,10 +12,10 @@ class AuthController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        return __METHOD__;
     }
 
-    public function actionCreateToken()
+    public function actionCreatetoken()
     {
         return 'token created';
     }
