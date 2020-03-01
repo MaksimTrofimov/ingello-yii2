@@ -14,7 +14,6 @@ class ProductController extends Controller
     public function actionIndex()
     {
         if (Yii::$app->request->isGet) {
-            $param = '';
             foreach (Yii::$app->request->get() as $key => $value) {
                 $param .= $key . '=' . $value . ' ';
             }
@@ -27,7 +26,12 @@ class ProductController extends Controller
         if (Yii::$app->request->isPost) {
             return 'create product';
         } else {
-            return 'product not created';
+            if (Yii::$app->request->get()) {
+                foreach (Yii::$app->request->get() as $key => $value) {
+                    $param .= $key . '=' . $value . ' ';
+                }
+            }
+            return 'product not created ' . $param;
         }
 
     }
